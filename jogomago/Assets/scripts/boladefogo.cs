@@ -16,9 +16,15 @@ public class boladefogo : MonoBehaviour
         this.rigidbody.linearVelocity = new Vector2(0, this.velY);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        
+        if (collider.CompareTag("inimigo"))
+        {
+            scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
+            inimigo.Destruir();
+            Destroy(this.gameObject);
+        }
     }
+
+
 }

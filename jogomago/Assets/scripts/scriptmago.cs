@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class scriptmago : MonoBehaviour
 {
-
+    public Rigidbody2D rigidbody;
     public bool KeepOffset = true;
     public Camera cam;
     public int activeFingerID = -1;
@@ -18,8 +18,13 @@ public class scriptmago : MonoBehaviour
     private float intervalotiro;
     public float tempoEspera;
 
+    
+
     private void Awake()
     {
+       
+        rigidbody = GetComponent<Rigidbody2D>();
+        
         cam = Camera.main;
         has2D = GetComponent<Collider2D>() != null;
         has3D = GetComponent<Collider>() != null;
@@ -33,6 +38,7 @@ public class scriptmago : MonoBehaviour
 
     void Start()
     {
+        pontuacao.Pontos = 0;
         this.intervalotiro = 0;
         
     }
