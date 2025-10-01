@@ -21,7 +21,7 @@ public class boladefogo : MonoBehaviour
         if (collider.CompareTag("inimigo"))
         {
             scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
-            inimigo.Destruir();
+            inimigo.Destruir(true);
             Destroy(this.gameObject);
         }
     }

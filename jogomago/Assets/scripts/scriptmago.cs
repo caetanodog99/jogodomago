@@ -18,6 +18,7 @@ public class scriptmago : MonoBehaviour
     private float intervalotiro;
     public float tempoEspera;
 
+    private int vidas;
     
 
     private void Awake()
@@ -38,6 +39,7 @@ public class scriptmago : MonoBehaviour
 
     void Start()
     {
+        this.vidas = 5;
         pontuacao.Pontos = 0;
         this.intervalotiro = 0;
         
@@ -81,6 +83,37 @@ public class scriptmago : MonoBehaviour
 
 
     }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.CompareTag("inimigo"))
+        {
+            PerderVida--;
+            scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
+            inimigo.Destruir(false);
+        }
+    }
+
+    public int PerderVida
+    {
+        get 
+        { 
+            return vidas; 
+        }
+
+        set 
+        {
+            this.vidas = value;
+            if (vidas < 0)
+            {
+                this.vidas = 0;
+            }
+        }
+
+
+    }
+
+
     private void atirar()
     {
         Instantiate(this.tiroprefab, this.transform.position, Quaternion.identity);

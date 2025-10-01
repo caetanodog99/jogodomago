@@ -26,9 +26,12 @@ public class scriptmalvado : MonoBehaviour
         this.rigidbody.linearVelocity = new Vector2(0,-this.velY);
     }
 
-    public void Destruir() 
+    public void Destruir(bool derrotado) 
     {
-        pontuacao.Pontos++;
+        if (derrotado)
+        {
+            pontuacao.Pontos++;
+        }
         Destroy(this.gameObject);
     }
 }

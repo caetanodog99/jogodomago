@@ -19,7 +19,7 @@ public static class pontuacao
             {
                 pontos = 0;
             }
-            Debug.Log("Pontuação atual: " +Pontos);
+            
         }
     }
    
