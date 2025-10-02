@@ -19,7 +19,8 @@ public class scriptmago : MonoBehaviour
     public float tempoEspera;
 
     private int vidas;
-    
+
+    private telafim telaFimJogo;
 
     private void Awake()
     {
@@ -42,7 +43,10 @@ public class scriptmago : MonoBehaviour
         this.vidas = 5;
         pontuacao.Pontos = 0;
         this.intervalotiro = 0;
-        
+
+        GameObject FimJogoObject = GameObject.FindGameObjectWithTag("TelaFimJogo");
+        this.telaFimJogo = FimJogoObject.GetComponent<telafim>();
+        this.telaFimJogo.Esconder();
     }
 
 
@@ -104,9 +108,12 @@ public class scriptmago : MonoBehaviour
         set 
         {
             this.vidas = value;
-            if (vidas < 0)
+            if (vidas <= 0)
             {
                 this.vidas = 0;
+                this.gameObject.SetActive(false);
+                telaFimJogo.Exibir();
+             
             }
         }
 

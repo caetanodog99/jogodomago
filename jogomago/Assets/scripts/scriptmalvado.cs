@@ -24,6 +24,15 @@ public class scriptmalvado : MonoBehaviour
     void Update()
     {
         this.rigidbody.linearVelocity = new Vector2(0,-this.velY);
+
+        Camera camera = Camera.main;
+        Vector3 posicaoNaCamera = camera.WorldToViewportPoint(this.transform.position);
+        if (posicaoNaCamera.y < 0)
+        {
+            scriptmago player = GameObject.FindGameObjectWithTag("Player").GetComponent<scriptmago>();
+            player.PerderVida--;
+            Destruir(false);
+        }
     }
 
     public void Destruir(bool derrotado) 

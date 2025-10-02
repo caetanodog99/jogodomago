@@ -10,10 +10,20 @@ public class boladefogo : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         this.rigidbody.linearVelocity = new Vector2(0, this.velY);
+    }
+
+    private void Update()
+    {
+        Camera camera = Camera.main;
+        Vector3 posicaoNaCamera = camera.WorldToViewportPoint(this.transform.position);
+        if (posicaoNaCamera.y > 1)
+        {
+            Destroy(this.gameObject); 
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
