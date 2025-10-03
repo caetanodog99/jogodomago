@@ -7,6 +7,7 @@ public class scriptmalvado : MonoBehaviour
     public Rigidbody2D rigidbody;
     public float velMin;
     public float velMax;
+    public int vida;
 
     private float velY;
 
@@ -35,7 +36,16 @@ public class scriptmalvado : MonoBehaviour
         }
     }
 
-    public void Destruir(bool derrotado) 
+    public void ReceberDano()
+    {
+        this.vida--;
+        if (vida <= 0)
+        {
+            Destruir(true); 
+        }
+    }
+
+    private void Destruir(bool derrotado) 
     {
         if (derrotado)
         {

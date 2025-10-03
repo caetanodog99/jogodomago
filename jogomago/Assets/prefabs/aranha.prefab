@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 4163199037394490679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 3.6, z: 0}
-  m_LocalScale: {x: 2, y: 1.6393442, z: 1}
+  m_LocalPosition: {x: 0.6566, y: 3.341, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -178,3 +178,4 @@ MonoBehaviour:
   rigidbody: {fileID: 5026998604466044173}
   velMin: 2
   velMax: 4
+  vida: 3

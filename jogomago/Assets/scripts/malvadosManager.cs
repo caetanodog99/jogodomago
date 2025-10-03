@@ -3,15 +3,15 @@ using UnityEngine;
 public class malvadosManager : MonoBehaviour
 {
     private float tempoDecorrido;
-    public scriptmalvado inimigo;
+    public scriptmalvado inimigoPequenoPrefab;
+    public scriptmalvado inimigoGrandePrefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.tempoDecorrido = 0;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         this.tempoDecorrido += Time.deltaTime;
@@ -23,7 +23,20 @@ public class malvadosManager : MonoBehaviour
             float posicaoX = Random.Range(posicaoMin.x, posicaoMax.x);  
 
             Vector2 posicaoInimigo = new Vector2 (posicaoX, posicaoMax.y);
-            Instantiate(this.inimigo, posicaoInimigo, Quaternion.identity);
+
+            scriptmalvado prefabInimigo;
+            float chanceSpawn = Random.Range(0f, 100f);
+
+            if (chanceSpawn <= 25)
+            {
+                prefabInimigo = this.inimigoGrandePrefab;
+            }
+            else
+            {
+                prefabInimigo = this.inimigoPequenoPrefab;
+            }
+
+                Instantiate(prefabInimigo, posicaoInimigo, Quaternion.identity);
         }
 
     }

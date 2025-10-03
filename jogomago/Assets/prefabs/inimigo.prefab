@@ -178,3 +178,4 @@ MonoBehaviour:
   rigidbody: {fileID: 5026998604466044173}
   velMin: 2
   velMax: 4
+  vida: 1

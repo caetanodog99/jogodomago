@@ -22,6 +22,8 @@ public class scriptmago : MonoBehaviour
 
     private telafim telaFimJogo;
 
+    [SerializeField] private escudo escudo;
+
     private void Awake()
     {
        
@@ -47,6 +49,7 @@ public class scriptmago : MonoBehaviour
         GameObject FimJogoObject = GameObject.FindGameObjectWithTag("TelaFimJogo");
         this.telaFimJogo = FimJogoObject.GetComponent<telafim>();
         this.telaFimJogo.Esconder();
+        this.escudo.Desativar();
     }
 
 
@@ -94,7 +97,7 @@ public class scriptmago : MonoBehaviour
         {
             PerderVida--;
             scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
-            inimigo.Destruir(false);
+            inimigo.ReceberDano();
         }
     }
 
