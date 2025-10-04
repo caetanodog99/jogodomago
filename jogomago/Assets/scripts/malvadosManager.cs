@@ -1,43 +1,73 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class malvadosManager : MonoBehaviour
 {
     private float tempoDecorrido;
     public scriptmalvado inimigoPequenoPrefab;
     public scriptmalvado inimigoGrandePrefab;
+    public scriptmalvado inimigoBoss;
 
-    void Start()
+    private bool bossSpawnado = false;
+
+    [SerializeField] private string vitoria;
+
+    public void Start()
     {
-        this.tempoDecorrido = 0;
+        tempoDecorrido = 0;
     }
 
-    
-    void Update()
+    public void Update()
     {
-        this.tempoDecorrido += Time.deltaTime;
-        if (this.tempoDecorrido >= 1f)
-        {
-            this.tempoDecorrido = 0;
-            Vector2 posicaoMax = Camera.main.ViewportToWorldPoint(new Vector2 (1,1));
-            Vector2 posicaoMin = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-            float posicaoX = Random.Range(posicaoMin.x, posicaoMax.x);  
+        tempoDecorrido += Time.deltaTime;
 
-            Vector2 posicaoInimigo = new Vector2 (posicaoX, posicaoMax.y);
+        if (tempoDecorrido >= 1f)
+        {
+            tempoDecorrido = 0;
+
+            Vector2 posicaoMax = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+            Vector2 posicaoMin = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+            float posicaoX = Random.Range(posicaoMin.x, posicaoMax.x);
+            Vector2 posicaoInimigo = new Vector2(posicaoX, posicaoMax.y);
+
 
             scriptmalvado prefabInimigo;
             float chanceSpawn = Random.Range(0f, 100f);
 
             if (chanceSpawn <= 25)
             {
-                prefabInimigo = this.inimigoGrandePrefab;
+                prefabInimigo = inimigoGrandePrefab;
             }
             else
             {
-                prefabInimigo = this.inimigoPequenoPrefab;
+                prefabInimigo = inimigoPequenoPrefab;
             }
 
-                Instantiate(prefabInimigo, posicaoInimigo, Quaternion.identity);
+            Instantiate(prefabInimigo, posicaoInimigo, Quaternion.identity);
+
+
+            if (pontuacao.Pontos >= 5)
+            {
+                prefabInimigo = inimigoBoss;
+
+                if (!bossSpawnado)
+                {
+                    Instantiate(prefabInimigo, posicaoInimigo, Quaternion.identity);
+                    bossSpawnado = true;
+                }
+
+                return;
+            }
+
+            
         }
 
+        
     }
+    public void TelaDeVitoria()
+    {
+        SceneManager.LoadScene(vitoria);
+    }
+
 }

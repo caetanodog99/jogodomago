@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+
+
 public class scriptmalvado : MonoBehaviour
 {
     public Rigidbody2D rigidbody;
@@ -10,6 +12,8 @@ public class scriptmalvado : MonoBehaviour
     public int vida;
 
     private float velY;
+
+
 
     void awake()
     {
@@ -52,5 +56,17 @@ public class scriptmalvado : MonoBehaviour
             pontuacao.Pontos++;
         }
         Destroy(this.gameObject);
+    }
+
+    void OnDestroy()
+    {
+        if (gameObject.CompareTag("Boss"))
+        {
+            malvadosManager manager = FindObjectOfType<malvadosManager>();
+            if (manager != null)
+            {
+               manager.TelaDeVitoria(); 
+            }
+        }
     }
 }

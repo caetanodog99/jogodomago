@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      aranha_0: 4120011959888742894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

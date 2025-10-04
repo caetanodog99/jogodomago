@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      barranova_0: 7324865643298151997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

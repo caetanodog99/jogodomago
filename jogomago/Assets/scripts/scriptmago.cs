@@ -13,7 +13,7 @@ public class scriptmago : MonoBehaviour
     [SerializeField] bool has2D; 
     [SerializeField] bool has3D;
 
-    //tiro do mago
+
     public boladefogo tiroprefab;
     private float intervalotiro;
     public float tempoEspera;
@@ -22,7 +22,6 @@ public class scriptmago : MonoBehaviour
 
     private telafim telaFimJogo;
 
-    [SerializeField] private escudo escudo;
 
     private void Awake()
     {
@@ -49,8 +48,9 @@ public class scriptmago : MonoBehaviour
         GameObject FimJogoObject = GameObject.FindGameObjectWithTag("TelaFimJogo");
         this.telaFimJogo = FimJogoObject.GetComponent<telafim>();
         this.telaFimJogo.Esconder();
-        this.escudo.Desativar();
+
     }
+
 
 
     void Update()
@@ -94,6 +94,12 @@ public class scriptmago : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.CompareTag("inimigo"))
+        {
+            PerderVida--;  
+            scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
+            inimigo.ReceberDano();
+        }
+        if (collider.CompareTag("Boss"))
         {
             PerderVida--;
             scriptmalvado inimigo = collider.GetComponent<scriptmalvado>();
