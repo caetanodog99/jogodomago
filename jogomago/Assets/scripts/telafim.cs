@@ -6,9 +6,11 @@ public class telafim : MonoBehaviour
 {
 
     public TextMeshProUGUI textopontos;
-    
+    public AudioSource audioDerrota;
+
     public void Exibir()
     {
+        audioDerrota.Play();
         this.gameObject.SetActive(true);
         this.textopontos.text ="Pontos: " + pontuacao.Pontos;
         Time.timeScale = 0;

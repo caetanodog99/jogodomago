@@ -47,7 +47,7 @@ public class malvadosManager : MonoBehaviour
             Instantiate(prefabInimigo, posicaoInimigo, Quaternion.identity);
 
 
-            if (pontuacao.Pontos >= 5)
+            if (pontuacao.Pontos >= 35)
             {
                 prefabInimigo = inimigoBoss;
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5351086275490990252}
   - component: {fileID: 965864669994970667}
   - component: {fileID: 4346081408879067415}
-  - component: {fileID: 234666041974680850}
+  - component: {fileID: 1878183595506685023}
   m_Layer: 0
   m_Name: boss
   m_TagString: Boss
@@ -169,16 +169,26 @@ MonoBehaviour:
   rigidbody: {fileID: 965864669994970667}
   velMin: 0.4
   velMax: 0.4
-  vida: 2
---- !u!114 &234666041974680850
-MonoBehaviour:
+  vida: 15
+--- !u!95 &1878183595506685023
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6849552637425980665}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d46f19b6743adcf49a7af16537e4819f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 570644ef6f250d74d8e22b6ca0a91084, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

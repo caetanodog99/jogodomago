@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5026998604466044173}
   - component: {fileID: 1831199251437097161}
   - component: {fileID: -5618494395746524782}
+  - component: {fileID: 1331431826482359688}
   m_Layer: 0
   m_Name: aranha
   m_TagString: inimigo
@@ -179,3 +180,25 @@ MonoBehaviour:
   velMin: 2
   velMax: 4
   vida: 3
+--- !u!95 &1331431826482359688
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163199037394490679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e9f52bbc53fb5946af84488e4f4c829, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

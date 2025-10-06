@@ -8,6 +8,7 @@ public class menuinicial : MonoBehaviour
     [SerializeField] private string fase1;
     public TextMeshProUGUI textoInstrucoes;
     public TextMeshProUGUI textoInicial;
+    public TextMeshProUGUI textoTitulo;
 
     void Update()
     {
@@ -21,6 +22,7 @@ public class menuinicial : MonoBehaviour
     IEnumerator TrocarCena()
     {
         this.textoInicial.text = "";
+        this.textoTitulo.text = "";
         this.textoInstrucoes.text = "Você deve derrotar todos os inimigos\n\nArraste o mago para movê-lo\n\nToque duas vezes na tela para proteger o mago";
         yield return new WaitForSeconds(6f);
 

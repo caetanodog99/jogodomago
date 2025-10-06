@@ -22,6 +22,7 @@ public class scriptmago : MonoBehaviour
 
     private telafim telaFimJogo;
 
+    public AudioSource audioProjetil;
 
     private void Awake()
     {
@@ -60,6 +61,7 @@ public class scriptmago : MonoBehaviour
         {
             this.intervalotiro = 0;
             atirar();
+            
         }
 
         if (Input.touchCount == 0) return;
@@ -133,6 +135,7 @@ public class scriptmago : MonoBehaviour
     private void atirar()
     {
         Instantiate(this.tiroprefab, this.transform.position, Quaternion.identity);
+        audioProjetil.Play();
     }
 
 
